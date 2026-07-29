@@ -1,0 +1,325 @@
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    padding:1rem 0;
+
+    transition:var(--transition);
+
+}
+
+.nav-container{
+
+    width:min(var(--container-width),92%);
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:1rem 1.5rem;
+
+    background:rgba(9,9,11,.55);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-round);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.8rem;
+
+    font-size:1.2rem;
+
+    font-weight:var(--font-bold);
+
+    transition:var(--transition);
+
+}
+
+.logo:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.logo-icon{
+
+    width:42px;
+
+    height:42px;
+
+    transition:var(--transition);
+
+}
+
+.logo:hover .logo-icon{
+
+    transform:rotate(-8deg) scale(1.08);
+
+}
+
+.logo-text{
+
+    color:var(--text-primary);
+
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:2rem;
+
+}
+
+.nav-links a{
+
+    position:relative;
+
+    color:var(--text-secondary);
+
+    transition:var(--transition);
+
+    font-weight:500;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--text-primary);
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    border-radius:999px;
+
+    background:var(--accent);
+
+    transition:var(--transition);
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+/* ==========================================
+   ACTIONS
+========================================== */
+
+.nav-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+}
+
+.nav-actions a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid var(--border);
+
+    transition:var(--transition);
+
+}
+
+.nav-actions a:hover{
+
+    background:var(--accent);
+
+    color:#fff;
+
+    transform:translateY(-3px);
+
+}
+
+.menu-button{
+
+    display:none;
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    color:var(--text-primary);
+
+    border:1px solid var(--border);
+
+    transition:var(--transition);
+
+}
+
+.menu-button:hover{
+
+    background:var(--accent);
+
+}
+
+/* ==========================================
+   SCROLLED STATE
+========================================== */
+
+.navbar.scrolled{
+
+    padding:.6rem 0;
+
+}
+
+.navbar.scrolled .nav-container{
+
+    box-shadow:var(--shadow-medium);
+
+    border-color:rgba(255,255,255,.12);
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:900px){
+
+    .nav-links{
+
+        position:fixed;
+
+        top:92px;
+
+        left:50%;
+
+        transform:translateX(-50%) translateY(-20px);
+
+        width:min(92%,420px);
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:1.5rem;
+
+        padding:2rem;
+
+        background:rgba(9,9,11,.95);
+
+        border:1px solid var(--border);
+
+        border-radius:var(--radius-large);
+
+        backdrop-filter:blur(24px);
+
+        opacity:0;
+
+        pointer-events:none;
+
+        transition:var(--transition);
+
+    }
+
+    .nav-links.active{
+
+        opacity:1;
+
+        transform:translateX(-50%) translateY(0);
+
+        pointer-events:auto;
+
+    }
+
+    .menu-button{
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .logo-text{
+
+        display:none;
+
+    }
+
+    .nav-actions a{
+
+        display:none;
+
+    }
+
+}
