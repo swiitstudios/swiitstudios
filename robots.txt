@@ -1,0 +1,30 @@
+# ==========================================
+# Robots.txt for Sweet Studios (swiitstudios.com)
+# ==========================================
+
+User-agent: *
+Allow: /
+Allow: /llms.txt
+Allow: /llms-small.txt
+
+# Explicitly ensure AI context engines can find our brand rules
+User-agent: ChatGPT-User
+Allow: /llms.txt
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /llms.txt
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /llms.txt
+Allow: /
+
+# Prevent bad or generic scraper bots from aggressive directory scraping
+User-agent: Claude-Web
+Disallow: /components/
+Disallow: /assets/
+
+# Link to your XML sitemap if you have one generated
+# Sitemap: https://swiitstudios.com
+
