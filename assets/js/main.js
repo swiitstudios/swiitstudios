@@ -9,10 +9,10 @@ function(){
 
 
     loadComponent(
-        "navbar",
-        "components/navbar.html"
-    );
-
+    "navbar",
+    "components/navbar.html",
+    setupNavigation
+);
 
     loadComponent(
         "hero",
