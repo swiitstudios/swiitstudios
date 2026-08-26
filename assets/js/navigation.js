@@ -10,7 +10,7 @@ function setupNavigation(){
 
 
     const menuButton = document.querySelector(
-        ".menu-toggle"
+        ".menu-button"
     );
 
 
